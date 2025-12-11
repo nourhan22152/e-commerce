@@ -1,0 +1,40 @@
+<form [formGroup]="productForm" (ngSubmit)="updateProduct()">
+
+  <label>Name</label>
+  <input type="text" formControlName="name">
+
+  <label>Price</label>
+  <input type="number" formControlName="price">
+
+  <label>Category</label>
+  <select formControlName="category">
+    <option *ngFor="let c of categories" [value]="c._id">{{ c.name }}</option>
+  </select>
+
+  <div class="variants-container" formArrayName="variants">
+
+    <div class="variant-card" *ngFor="let v of variants.controls; let i = index" [formGroupName]="i">
+
+      <label>Color</label>
+      <input type="text" formControlName="color">
+
+      <img *ngIf="isOldImage(v.value.image)" [src]="v.value.image" width="70">
+
+      <input type="file" (change)="selectImage(i, $event)">
+
+      <div formArrayName="sizes">
+        <div class="size-row" *ngFor="let s of getSizes(i).controls; let j = index" [formGroupName]="j">
+
+          <input type="text" formControlName="size">
+          <input type="number" formControlName="stock">
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <button type="submit">Update</button>
+
+</form>

@@ -1,0 +1,107 @@
+/* Main background */
+.login-page {
+  height: 100vh;
+  width: 100%;
+  background-color: #e4e8e9; /* لونك */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Title */
+.title {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* White box */
+.login-box {
+  background: white;
+  width: 380px;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0px 4px 25px rgba(0,0,0,0.1);
+}
+
+/* Input styling */
+.login-box input {
+  width: 100%;
+  height: 45px;
+  margin: 10px 0 20px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+/* Buttons area */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Back button */
+.back {
+  background: #fff;
+  border: 1px solid #bbb;
+  padding: 10px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.back:hover {
+  background: #f0f0f0;
+}
+
+/* Next button */
+.next {
+  background: #5c6bc0;
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.next:hover {
+  background: #3f4ca3;
+}
+
+
+.register-link a {
+  color: #5c6bc0;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 5px;
+  transition: 0.2s;
+}
+
+.register-link a:hover {
+  color: #8b077a;
+}
+
+.signup-link {
+  width: 100%;
+  text-align: center;   /* يخلي النص في النص */
+  margin-top: 15px;
+}
+
+.signup-link a {
+  font-size: 15px;
+  font-weight: bold;
+  color: #5c6bc0;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.signup-link a:hover {
+  color: #630d5c;
+}

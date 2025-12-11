@@ -1,0 +1,67 @@
+<div class="category-container">
+
+  <h2 class="title">Add Category</h2>
+
+  <!-- FORM CARD -->
+  <div class="category-form-card">
+    <h3>{{ isEdit ? "Update Category" : "Add Category" }}</h3>
+
+    <form [formGroup]="form" (ngSubmit)="submitForm()" class="category-form">
+
+      <label>Name</label>
+      <input type="text" formControlName="name" placeholder="Category Name" />
+
+      <label>Description</label>
+      <textarea formControlName="description" placeholder="Description"></textarea>
+
+
+      <label>Image</label>
+
+      <div class="file-wrapper" (click)="fileInput.click()">
+
+        <span class="file-placeholder">
+          {{ selectedImage?.name || "Choose Image" }}
+        </span>
+
+        <input type="file" #fileInput (change)="onImageSelected($event)" class="file-input-real" />
+
+      </div>
+
+
+
+      <button type="submit" class="btn-submit">
+        {{ isEdit ? "Update Category" : "Add Category" }}
+      </button>
+
+      <button type="button" *ngIf="isEdit" class="btn-cancel" (click)="resetForm()">
+        Cancel
+      </button>
+
+    </form>
+  </div>
+  <br>
+
+  <!-- CATEGORIES LIST -->
+  <h3 class="section-title">All Categories</h3>
+
+  <div class="categories-list">
+
+    <div class="category-card" *ngFor="let cat of categories">
+
+      <img class="category-img" *ngIf="cat.image" [src]="cat.image" />
+
+      <div class="category-info">
+        <h4>{{ cat.name }}</h4>
+        <p>{{ cat.description }}</p>
+      </div>
+
+      <div class="category-actions">
+        <button class="btn-update" (click)="editCategory(cat)">Update</button>
+        <button class="btn-delete" (click)="deleteCategory(cat._id)">Delete</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

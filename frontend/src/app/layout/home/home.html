@@ -1,0 +1,95 @@
+<h2 class="title">Shop By Category</h2>
+
+<div class="cat-grid">
+  <div class="cat-card" *ngFor="let c of categories" (click)="goToCategory(c._id)">
+    <div class="cat-img">
+      <img [src]="c.image" />
+    </div>
+    <p class="cat-name">{{ c.name }}</p>
+  </div>
+</div>
+
+<h2 class="title">Products</h2>
+
+<div class="filter-bar">
+
+  <!-- Category -->
+  <div class="filter-group">
+    <label>Category</label>
+    <select (change)="applyFilter('category', $any($event.target).value)">
+      <option value="">All</option>
+      <option *ngFor="let c of categories" [value]="c._id">
+        {{ c.name }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Color -->
+  <div class="filter-group">
+    <label>Color</label>
+    <div class="color-options">
+
+      <!-- none color -->
+      <span class="color-circle none-circle" (click)="applyFilter('color', '')">
+        ✖
+      </span>
+
+      <!-- colors -->
+      <span *ngFor="let clr of colors" class="color-circle" [style.background]="clr"
+        (click)="applyFilter('color', clr)">
+      </span>
+
+    </div>
+
+  </div>
+
+  <!-- Size -->
+  <div class="filter-group">
+    <label>Size</label>
+    <select (change)="applyFilter('size', $any($event.target).value)">
+      <option value="">All</option>
+      <option *ngFor="let s of sizes" [value]="s">
+        {{ s }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Price -->
+
+
+  <div class="filter-group price-group">
+    <label>Price</label>
+    <input type="number" placeholder="Min" (change)="applyFilter('min', $any($event.target).value)">
+    <input type="number" placeholder="Max" (change)="applyFilter('max', $any($event.target).value)">
+  </div>
+
+</div>
+
+
+<!-- 🔥 المنتجات تظهر هنا -->
+
+
+<div class="product-grid">
+  <div class="product-card" *ngFor="let item of products">
+
+    <div class="img-wrapper" (click)="openProduct(item._id, $event)">
+      <img [src]="item.variants?.[0]?.image" />
+    </div>
+
+    <p class="product-name">{{ item.name }}</p>
+
+    <p class="price">{{ item.price }} EGP</p>
+
+    <p class="description">{{ item.description }}</p>
+
+    <div class="color-box">
+      <span *ngFor="let v of item.variants" class="color-circle" [style.background]="v.color">
+      </span>
+    </div>
+
+    <button class="cart-btn" (click)="openProduct(item._id, $event)">
+      🛒
+    </button>
+
+  </div>
+</div>

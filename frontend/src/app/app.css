@@ -1,0 +1,24 @@
+:host {
+  display: block;
+  background-color: #e4e8e9; /* غيريها لأي لون */
+  min-height: 100vh;
+}
+/* ===== Scrollbar Style Like ChatGPT ===== */
+
+::-webkit-scrollbar {
+  width: 6px;              /* نخليه رفيع */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* شفاف زي ChatGPT */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;     /* الرمادي الفاتح */
+  border-radius: 4px;      /* Round مثل ChatGPT */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;     /* عند hover */
+}
+

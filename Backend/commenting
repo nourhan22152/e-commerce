@@ -1,0 +1,30 @@
+; // # Backend Folder Structure (بدون كود)
+
+; ده شكل الفايلات فقط، من غير أي كتابة كود جوه:
+
+; - **backend/**
+;   - **package.json** (فاضي – لسه هيتحدد المتطلبات بعدين)
+;   - **.env** (للمتغيرات الحسّاسة)
+;   - **src/**
+;     - **server.js** (نقطة تشغيل السيرفر – فاضي)
+;     - **config/**
+;       - db.js (مكان اتصال الداتا بيز – فاضي)
+;     - **models/**
+;       - User.js
+;       - Product.js
+;       - Order.js
+;     - **routes/**
+;       - authRoutes.js
+;       - productRoutes.js
+
+
+
+;       - orderRoutes.js
+;     - **controllers/**
+;       - authController.js
+;       - productController.js
+;       - orderController.js
+;     - **middleware/**
+;       - authMiddleware.js
+
+; لو حبّيتي بعد كده نجهّز Docs لكل ملف يشرح بيعمل إيه — من غير كود — أعملهولِك.

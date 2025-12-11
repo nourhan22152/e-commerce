@@ -1,0 +1,62 @@
+/* ====== Page Title ====== */
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin: 25px 0;
+}
+
+
+/* ====== Table Styling ====== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 3px 20px rgba(0,0,0,0.1);
+}
+
+/* Header */
+table thead {
+  background: #5c6bc0;
+  color: white;
+}
+
+table th {
+  padding: 15px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Table rows */
+table td {
+  padding: 14px;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+/* Hover effect */
+tbody tr:hover {
+  background: #f3f4ff;
+  transition: 0.2s;
+}
+
+
+/* ====== View Button ====== */
+button {
+  background: #5c6bc0;
+  color: white;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #3f4ca3;
+}

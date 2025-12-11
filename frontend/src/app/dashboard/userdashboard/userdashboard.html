@@ -1,0 +1,49 @@
+<div class="dashboard-container">
+
+  <h2>Users Management</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let user of users; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td>
+          <span [class.admin]="user.role === 'admin'">
+            {{ user.role }}
+          </span>
+        </td>
+
+        <td>
+          <!-- Make Admin Button -->
+          <button
+            *ngIf="user.role !== 'admin'"
+            (click)="makeAdmin(user.id)"
+            class="make-admin">
+            Make Admin
+          </button>
+
+          <!-- Delete User Button -->
+          <button class="delete" (click)="deleteUser(user.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="loading" class="loading">Loading...</div>
+
+</div>

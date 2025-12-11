@@ -1,0 +1,50 @@
+// 1️⃣ Import Mongoose
+const mongoose = require("mongoose");
+
+// 2️⃣ Create Schema
+const userSchema = new mongoose.Schema({
+  name: String,
+  age: Number,
+  email: String
+});
+
+// 3️⃣ Create Model
+const User = mongoose.model("User", userSchema);
+
+// 4️⃣ Export Model
+module.exports = User;
+
+
+---------------------index file---------------
+
+// 1️⃣ Import mongoose + model
+const mongoose = require("mongoose");
+const User = require("./models/user.model");
+
+// 2️⃣ Connect to database
+mongoose.connect("mongodb://localhost:27017/myDatabase")
+  .then(() => console.log("Database Connected"))
+  .catch(err => console.log(err));
+
+
+-----------------crud-------------------
+
+🔹 Create
+await User.create({
+  name: "Nourhan",
+  age: 29,
+  email: "test@gmail.com"
+});
+
+🔹 Read
+const users = await User.find({ age: 29 });
+console.log(users);
+
+🔹 Update
+await User.updateOne(
+  { name: "Nourhan" },
+  { age: 30 }
+);
+
+🔹 Delete
+await User.deleteOne({ name: "Nourhan" });

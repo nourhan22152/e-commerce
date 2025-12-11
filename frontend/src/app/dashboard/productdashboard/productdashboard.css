@@ -1,0 +1,251 @@
+/* ============================
+   PAGE WRAPPER
+============================ */
+
+.add-product-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #e4e8e9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+}
+
+/* ============================
+   TITLE
+============================ */
+
+.title {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* ============================
+   MAIN PRODUCT FORM BOX
+============================ */
+
+.product-box {
+  background: white;
+  width: 90%;
+  max-width: 1100px;
+  /* نفس عرض فورم العنوان */
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+/* INPUT + SELECT SAME STYLE */
+
+.product-box input,
+.product-box select {
+  width: 100%;
+  height: 45px;
+  margin: 10px 0 15px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  background: white;
+}
+
+.product-box select {
+  cursor: pointer;
+}
+
+/* ============================
+   SECTION TITLES
+============================ */
+
+.sub-title {
+  font-size: 20px;
+  color: #444;
+  margin: 15px 0;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+/* ============================
+   VARIANT GRID & CARDS
+============================ */
+
+.variants-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* عمودين */
+  gap: 25px;
+}
+
+.variant-card {
+  background: #f7f7f7;
+  padding: 20px 40px 20px 20px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+.variant-card input,
+.variant-card select {
+  background: #fff;
+}
+
+/* ============================
+   SIZE SELECTION
+============================ */
+
+.sizes-box {
+  margin-bottom: 10px;
+}
+
+.size-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.size-item select,
+.size-item input {
+  flex: 1;
+}
+
+/* ============================
+   BUTTONS
+============================ */
+
+.add-size,
+.add-variant {
+  margin-bottom: 15px;
+  background: #5c6bc0;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+  transition: 0.2s;
+  margin-top: 10px;
+}
+
+.add-size:hover,
+.add-variant:hover {
+  background: #3f4ca3;
+}
+
+.remove {
+  background: #fff;
+  border: 1px solid #bbb;
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.remove:hover {
+  background: #f0f0f0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1100px;
+}
+.file-btn {
+  display: inline-block;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  text-align: left;
+  color: #555;
+  transition: 0.2s;
+}
+
+.file-btn:hover {
+  background: #f0f0f0;
+}
+
+
+.back {
+  background: #fff;
+  border: 1px solid #bbb;
+  padding: 10px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.back:hover {
+  background: #f0f0f0;
+}
+
+.next {
+  background: #5c6bc0;
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.next:hover {
+  background: #3f4ca3;
+}
+
+/* ============================
+   CHATGPT SCROLLBAR STYLE
+============================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+
+@media (max-width: 700px) {
+  .variants-grid {
+    grid-template-columns: 1fr;
+    /* عمود واحد في الموبايل */
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .product-box {
+    padding: 25px;
+  }
+
+
+
+}

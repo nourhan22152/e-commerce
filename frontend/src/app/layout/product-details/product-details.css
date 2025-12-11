@@ -1,0 +1,121 @@
+/* PAGE LAYOUT */
+.product-page {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr;
+  gap: 20px;
+  margin: 20px;
+}
+
+/* THUMBS */
+.thumbnail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.thumb {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.thumb.active {
+  border-color: black;
+}
+
+/* MAIN IMAGE */
+.main-image {
+  width: 450px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* COLOR OPTIONS */
+.color-options {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.color-option {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.color-option.active {
+  border-color: black;
+}
+
+/* SIZE OPTIONS */
+.sizes {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.size-option {
+  padding: 8px 14px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.size-option.active {
+  background: black;
+  color: white;
+  border-color: black;
+}
+.qty-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.qty-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  background: #f5f5f5;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qty-number {
+  font-size: 20px;
+  font-weight: bold;
+  width: 30px;
+  text-align: center;
+}
+
+
+/* BUTTON */
+.add-cart {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: blue;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.selected-color-name {
+  margin-left: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #555;
+}

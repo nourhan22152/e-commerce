@@ -1,0 +1,100 @@
+<div class="add-product-page">
+
+  <h2 class="title">Add New Product</h2>
+
+  <form [formGroup]="productForm" (ngSubmit)="submitProduct()">
+
+    <div class="product-box">
+
+      <!-- Product Main Fields -->
+      <label>Name</label>
+      <input type="text" formControlName="name" />
+
+      <label>Price</label>
+      <input type="number" formControlName="price" />
+
+      <label>Category</label>
+      <select formControlName="category">
+        <option value="">Select Category</option>
+
+        <option *ngFor="let cat of categories" [value]="cat._id">
+          {{ cat.name }}
+        </option>
+      </select>
+
+
+      <hr class="divider">
+
+      <!-- Variants Section -->
+      <h3 class="sub-title">Variants</h3>
+
+      <div class="variants-grid" formArrayName="variants">
+
+        <!-- ONE VARIANT CARD -->
+        <div class="variant-card" *ngFor="let variant of variants.controls; let vi = index" [formGroupName]="vi">
+
+          <label>Color</label>
+          <input type="text" formControlName="color" />
+
+          <label>Image</label>
+          <input type="file" id="image-{{vi}}" (change)="selectImage(vi, $event)" hidden>
+          <label class="file-btn" for="image-{{vi}}">Choose Image</label>
+
+
+          <h4>Sizes</h4>
+
+          <!-- SIZES INSIDE VARIANT -->
+          <div formArrayName="sizes" class="sizes-box">
+
+            <div class="size-item" *ngFor="let size of getSizes(vi).controls; let si = index" [formGroupName]="si">
+
+              <select formControlName="size">
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+                <option value="XXXL">XXXL</option>
+              </select>
+
+              <input type="number" placeholder="Stock" formControlName="stock" />
+
+              <button type="button" class="remove" (click)="removeSize(vi, si)">
+                Remove
+              </button>
+
+            </div>
+
+          </div>
+
+          <!-- ADD SIZE BUTTON -->
+          <button type="button" class="add-size" (click)="addSize(vi)">
+            + Add Size
+          </button>
+
+          <!-- REMOVE VARIANT BUTTON -->
+          <button type="button" class="remove" (click)="removeVariant(vi)">
+            Remove Variant
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- ADD VARIANT BUTTON -->
+      <button type="button" class="add-variant" (click)="addVariant()">
+        + Add Variant
+      </button>
+
+    </div>
+
+    <!-- SUBMIT BUTTONS -->
+    <div class="buttons">
+      <button type="button" class="back">Back</button>
+      <button type="submit" class="next">Save Product</button>
+    </div>
+
+  </form>
+
+</div>

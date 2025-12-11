@@ -1,0 +1,46 @@
+<div class="register-page">
+
+  <h1 class="title">Create Your Account</h1>
+
+  <div class="register-box">
+
+    <label>Name</label>
+    <input
+      type="text"
+      [(ngModel)]="form.name"
+      name="name"
+      placeholder="Your full name"
+    />
+
+    <label>Email</label>
+    <input
+      type="email"
+      [(ngModel)]="form.email"
+      name="email"
+      placeholder="example@email.com"
+    />
+
+    <label>Phone</label>
+    <input
+      type="text"
+      [(ngModel)]="form.phone"
+      name="phone"
+      placeholder="010xxxxxxxx"
+    />
+
+    <label>Password</label>
+    <input
+      type="password"
+      [(ngModel)]="form.password"
+      name="password"
+      placeholder="Choose a strong password"
+    />
+
+    <div class="buttons">
+      <button class="back" routerLink="/login">Back</button>
+      <button class="next" (click)="submit()">Register</button>
+    </div>
+
+  </div>
+
+</div>

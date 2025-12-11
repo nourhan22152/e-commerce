@@ -1,0 +1,60 @@
+<div *ngIf="product" class="product-page">
+
+  <!-- LEFT SIDE: thumbnails -->
+  <div class="thumbnail-list">
+    <img *ngFor="let v of product.variants" [src]="v.image" class="thumb" [class.active]="mainImage === v.image"
+      (click)="selectImage(v.image)" />
+  </div>
+
+  <!-- MAIN IMAGE -->
+  <div class="main-image-container">
+    <img [src]="mainImage" class="main-image" />
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="details">
+    <h2>{{ product.name }}</h2>
+    <h3>LE {{ product.price }}</h3>
+
+    <p class="desc">{{ product.description }}</p>
+
+    <!-- SIZE SECTION -->
+    <div class="size-section">
+      <strong>SIZE:</strong>
+
+      <div class="sizes">
+        <span *ngFor="let s of selectedVariant.sizes" class="size-option" [class.active]="selectedSize === s.size"
+          (click)="selectSize(s.size)">
+          {{ s.size }}
+        </span>
+      </div>
+    </div>
+
+    <!-- COLOR SECTION -->
+    <div class="color-section">
+      <strong>COLOR: </strong>
+      <span class="selected-color-name">{{ selectedVariant.color }}</span>
+
+      <div class="color-options">
+        <img *ngFor="let v of product.variants" [src]="v.image" class="color-option"
+          [class.active]="selectedVariant === v" (click)="selectVariant(v)" />
+      </div>
+    </div>
+
+    <div class="qty-section">
+      <button class="qty-btn" (click)="decreaseQty()">-</button>
+
+      <span class="qty-number">{{ quantity }}</span>
+
+      <button class="qty-btn" (click)="increaseQty()">+</button>
+    </div>
+
+    <button class="add-cart" (click)="addToCart()">
+      Add to Cart ({{ quantity }})
+    </button>
+
+
+
+
+
+  </div>

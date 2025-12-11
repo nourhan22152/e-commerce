@@ -1,0 +1,25 @@
+<div class="nav-tabs">
+  <div class="left-tabs">
+    <button routerLink="/home" routerLinkActive="active-tab">Home</button>
+  </div>
+
+  <div class="right-tabs">
+    <a *ngIf="isAdmin" routerLink="/dashboard" class="btn admin-btn">
+      Dashboard
+    </a>
+
+    <button routerLink="/cart" routerLinkActive="active-tab">Cart</button>
+
+    <button routerLink="/profile" routerLinkActive="active-tab" class="profile-btn">
+      <span>Profile</span>
+    </button>
+  </div>
+</div>
+
+
+
+<div class="categories">
+  <button *ngFor="let cat of categories" (click)="goToCategory(cat._id)">
+    {{ cat.name }}
+  </button>
+</div>

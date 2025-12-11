@@ -1,0 +1,32 @@
+<h2>All Orders</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>User</th>
+      <th>Total</th>
+      <th>Status</th>
+      <th>Date</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order._id }}</td>
+      <td>
+        <!-- user or guest -->
+        <span *ngIf="order.userId">{{ order.userId.name }}</span>
+        <span *ngIf="!order.userId">{{ order.guestInfo?.name }}</span>
+      </td>
+      <td>{{ order.totalPrice }} EGP</td>
+      <td>{{ order.status }}</td>
+      <td>{{ order.createdAt | date }}</td>
+      <td>
+        <button [routerLink]="['/dashboard/OrderDetails', order._id]">View</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

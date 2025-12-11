@@ -1,0 +1,58 @@
+<div *ngIf="order" class="order-details">
+
+  <h2>Order Details</h2>
+
+  <h3>Order ID: {{ order._id }}</h3>
+  <p><strong>Date:</strong> {{ order.createdAt | date:'medium' }}</p>
+
+  <hr>
+
+  <h3>Customer Info</h3>
+  <div *ngIf="order.userId; else guestBlock">
+    <p><strong>Name:</strong> {{ order.userId.name }}</p>
+    <p><strong>Email:</strong> {{ order.userId.email }}</p>
+  </div>
+
+  <ng-template #guestBlock>
+    <p><strong>Name:</strong> {{ order.guestInfo?.name }}</p>
+    <p><strong>Email:</strong> {{ order.guestInfo?.email }}</p>
+    <p><strong>Phone:</strong> {{ order.guestInfo?.phone }}</p>
+  </ng-template>
+
+  <hr>
+
+  <h3>Shipping Address</h3>
+  <p>{{ order.shippingAddress.city }}, {{ order.shippingAddress.street }}</p>
+  <p>{{ order.shippingAddress.building }} - Floor {{ order.shippingAddress.floor }}</p>
+  <p>{{ order.shippingAddress.apartment }}</p>
+  <p><strong>Phone:</strong> {{ order.shippingAddress.phone }}</p>
+
+  <hr>
+
+  <h3>Items</h3>
+
+  <div class="item" *ngFor="let item of order.items">
+    <img [src]="item.image" width="80" />
+    <div>
+      <p><strong>{{ item.name }}</strong></p>
+      <p>Color: {{ item.color }} | Size: {{ item.size }}</p>
+      <p>Qty: {{ item.quantity }}</p>
+      <p>Price: {{ item.totalPrice }} EGP</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3>Total: {{ order.totalPrice }} EGP</h3>
+
+  <hr>
+
+  <h3>Update Status</h3>
+
+  <select [(ngModel)]="order.status">
+    <option *ngFor="let s of statuses" [value]="s">{{ s }}</option>
+  </select>
+
+  <button (click)="updateStatus(order.status)">Update</button>
+
+</div>

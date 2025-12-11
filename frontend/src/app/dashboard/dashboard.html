@@ -1,0 +1,33 @@
+<!-- dashboard.component.html -->
+
+<div class="header-tabs">
+  <a class="tab" href="/">>
+    Home
+  </a>
+
+  <a class="tab" routerLink="categories" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    Categories
+  </a>
+
+  <a class="tab" routerLink="products" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    add Products
+  </a>
+    <a class="tab" routerLink="EditProductsDashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    Edit Products
+  </a>
+
+  <a class="tab" routerLink="user" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    Users
+  </a>
+
+  <a class="tab" routerLink="orders" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    Orders
+  </a>
+
+  <a class="tab" routerLink="feedback" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    feedback
+  </a>
+</div>
+
+<!-- هنا هيتغير المحتوى حسب التاب -->
+<router-outlet></router-outlet>

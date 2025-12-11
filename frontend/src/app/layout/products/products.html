@@ -1,0 +1,42 @@
+<h2>Products </h2>
+
+<div *ngIf="products.length === 0">
+  No products found.
+</div>
+
+<div class="product-grid">
+  <div class="product-card" *ngFor="let item of products" (click)="goToDetails(item._id)">
+
+    <!-- 🔵 الصورة الرئيسية (أول variant) -->
+    <div class="product-image" *ngIf="item.variants?.length > 0">
+      <img [src]="item.variants[0].image" alt="Product Image" />
+    </div>
+
+    <h3>{{ item.name }}</h3>
+    <p>{{ item.price }} EGP</p>
+
+    <!-- 🔵 عرض صور جميع الألوان -->
+    <div class="variant-images" *ngIf="item.variants?.length > 1">
+      <img *ngFor="let v of item.variants" [src]="v.image" class="variant-thumb" alt="Variant Image">
+    </div>
+
+    <!-- 🔵 عرض الألوان المتاحة -->
+    <p class="colors">
+      <strong>Colors:</strong>
+      <span *ngFor="let v of item.variants">
+        {{ v.color }}
+      </span>
+    </p>
+
+    <!-- 🔵 عرض المقاسات -->
+    <p class="sizes">
+      <strong>Sizes:</strong>
+      <span *ngFor="let v of item.variants">
+        <ng-container *ngFor="let s of v.sizes">
+          {{ s.size }}
+        </ng-container>
+      </span>
+    </p>
+
+  </div>
+</div>

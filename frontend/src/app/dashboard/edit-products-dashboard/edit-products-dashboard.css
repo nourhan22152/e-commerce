@@ -1,0 +1,145 @@
+/* PAGE WRAPPER (نفس ستايل إضافة المنتج) */
+.products-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #e4e8e9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+}
+
+/* TITLE */
+.title {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* TABLE CONTAINER MATCHING product-box STYLE */
+.product-box {
+  background: white;
+  width: 90%;
+  max-width: 1100px;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0px 4px 25px rgba(0,0,0,0.1);
+}
+
+/* TABLE BASE STYLE */
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.products-table thead {
+  background: #f7f7f7;
+}
+
+.products-table th,
+.products-table td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.products-table tbody tr:hover {
+  background: #f5f5f5;
+}
+
+/* VARIANT ITEMS */
+.variant-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.variant-color {
+  font-weight: 600;
+}
+
+.variant-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* BUTTONS */
+.actions-col button {
+  margin-right: 8px;
+  padding: 7px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+/* Edit Button */
+.edit-btn {
+  background: #5c6bc0;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background: #3f4ca3;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .products-table th,
+  .products-table td {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .variant-img {
+    width: 34px;
+    height: 34px;
+  }
+}
+/* ---------------------
+ */
+
+ /* صف صغير للصورة + اللون */
+.variant-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+/* صورة أصغر ومتناسقة */
+.variant-img-small {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.variant-color {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* يخلي عمود الأكشنز على أقصى اليمين */
+.actions-col {
+  text-align: right;
+  white-space: nowrap; /* عشان Edit و Delete يفضلوا جنب بعض */
+}

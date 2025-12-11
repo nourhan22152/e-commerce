@@ -1,0 +1,43 @@
+<div class="dashboard-container">
+
+  <h2>📋feed back controller</h2>
+
+  <div *ngIf="isLoading">loading...</div>
+
+  <table *ngIf="!isLoading && feedbackList.length > 0">
+    <thead>
+      <tr>
+        <th>message</th>
+        <th>name</th>
+        <th>status</th>
+        <th>procedure</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of feedbackList">
+        <td>{{ item.message }}</td>
+        <td>{{ item.userName || 'غير معروف' }}</td>
+        <td>
+          <span class="status pending" *ngIf="item.status === 'pending'">Pending</span>
+          <span class="status approved" *ngIf="item.status === 'approved'">Approved</span>
+        </td>
+        <td>
+          <button
+            *ngIf="item.status === 'pending'"
+            (click)="approve(item._id)">
+            accept ✔
+          </button>
+
+          <span *ngIf="item.status === 'approved'">—</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="!isLoading && feedbackList.length === 0">
+    feedback queu is empty
+  </p>
+
+</div>
+

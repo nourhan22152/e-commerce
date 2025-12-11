@@ -1,0 +1,69 @@
+<div class="order-container">
+
+  <h2>Checkout</h2>
+
+  <h3>Shipping Address</h3>
+
+  <div class="form">
+    <label>City</label>
+    <input [(ngModel)]="shippingAddress.city">
+
+    <label>Street</label>
+    <input [(ngModel)]="shippingAddress.street">
+
+    <label>Building</label>
+    <input [(ngModel)]="shippingAddress.building">
+
+    <label>Floor</label>
+    <input [(ngModel)]="shippingAddress.floor">
+
+    <label>Apartment</label>
+    <input [(ngModel)]="shippingAddress.apartment">
+
+    <label>Phone</label>
+    <input [(ngModel)]="shippingAddress.phone">
+  </div>
+
+  <hr>
+
+  <!-- Guest Info -->
+  <div *ngIf="!isLoggedIn">
+    <h3>Your Information (Guest Checkout)</h3>
+
+    <label>Name</label>
+    <input [(ngModel)]="guestInfo.name">
+
+    <label>Email</label>
+    <input [(ngModel)]="guestInfo.email">
+
+    <label>Phone</label>
+    <input [(ngModel)]="guestInfo.phone">
+  </div>
+
+
+
+  <hr>
+
+  <h3>Order Items</h3>
+  <div *ngFor="let item of items" class="item">
+
+    <div class="item-info">
+      <p><strong>{{ item.name }}</strong></p>
+
+      <p>Color: {{ item.color }}</p>
+      <p>Size: {{ item.size }}</p>
+
+      <p>Quantity: {{ item.quantity }}</p>
+
+      <p><strong>Item Total:</strong> {{ item.totalPrice }} EGP</p>
+    </div>
+
+  </div>
+  <h3 class="grand-total">
+    Order Total: {{ getOrderTotal() }} EGP
+  </h3>
+
+
+  <button (click)="submitOrder()" class="submit-btn">Place Order</button>
+
+</div>
