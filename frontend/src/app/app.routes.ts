@@ -27,6 +27,7 @@ import { FeedbackDashboardComponent } from './dashboard/feedbackdashboard/feedba
 import { Feedback } from './layout/shared/feedback/feedback';
 import { EditProductsDashboard } from './dashboard/edit-products-dashboard/edit-products-dashboard';
 import { UppdateproductDashboard } from './dashboard/uppdateproduct-dashboard/uppdateproduct-dashboard';
+import { UserOrdersComponent } from './layout/user-orders/user-orders';
 
 export const routes: Routes = [
   {
@@ -42,6 +43,7 @@ export const routes: Routes = [
       { path: "category", component: Category },
       { path: "cart", component: Cart },
       { path: "orders", component: Order },
+      { path: 'user-orders', component: UserOrdersComponent },
       { path: "user", component: User },
       { path: "guest", component: Guest },
       { path: "feedback", component: Feedback },

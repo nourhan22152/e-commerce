@@ -1,0 +1,89 @@
+.orders-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.order-card {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.order-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.order-card h3 {
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.order-card p {
+  margin: 4px 0;
+  color: #555;
+}
+
+.order-card strong {
+  color: #000;
+}
+
+/* Items Style */
+.item {
+  background: #f8f8f8;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 6px 0;
+  border-left: 4px solid #4CAF50;
+}
+
+.item p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Cancel Button */
+.cancel-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cancel-btn:hover {
+  background-color: #e60000;
+}
+
+/* If cancel not allowed */
+.not-allowed {
+  color: #999;
+  font-size: 14px;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Loading Spinner */
+.loading {
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+  color: #555;
+}
