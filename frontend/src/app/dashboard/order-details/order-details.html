@@ -8,10 +8,12 @@
   <hr>
 
   <h3>Customer Info</h3>
-  <div *ngIf="order.userId; else guestBlock">
-    <p><strong>Name:</strong> {{ order.userId.name }}</p>
-    <p><strong>Email:</strong> {{ order.userId.email }}</p>
+  <div *ngIf="order.customerId; else guestBlock">
+    <p><strong>Name:</strong> {{ order.customerId.name }}</p>
+    <p><strong>Email:</strong> {{ order.customerId.email }}</p>
   </div>
+
+
 
   <ng-template #guestBlock>
     <p><strong>Name:</strong> {{ order.guestInfo?.name }}</p>

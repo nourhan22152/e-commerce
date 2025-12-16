@@ -11,14 +11,14 @@ export class AdminGuard implements CanActivate {
   canActivate(): boolean {
 
     // 1) هتجيبي بيانات اليوزر من localStorage
-    const user = localStorage.getItem("user");
+    const customer = localStorage.getItem("customer");
 
-    if (!user) {
+    if (!customer) {
       this.router.navigate(['/login']);
       return false;
     }
 
-    const parsedUser = JSON.parse(user);
+    const parsedUser = JSON.parse(customer);
 
     // 2) لو مش Admin → منمنع الدخول
     if (parsedUser.role !== "admin") {

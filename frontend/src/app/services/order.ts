@@ -41,7 +41,7 @@ export class OrderService {
 
 
   getUserOrders() {
-    return this.http.get(`${this.apiUrl}/user`, this.getAuthHeaders());
+    return this.http.get(`${this.apiUrl}/customer`, this.getAuthHeaders());
   }
 
   getAllOrders() {

@@ -7,14 +7,14 @@ import { Observable } from 'rxjs';
 })
 export class AdminService {
 
-  private apiUrl = 'http://localhost:4000/users/api';
+  private apiUrl = 'http://localhost:4000/api/customers/';
 
   constructor(private http: HttpClient) {}
 
   // ----------------------------------------
   // ✔ GET ALL USERS (ADMIN ONLY)
   // ----------------------------------------
-  getAllUsers(): Observable<any> {
+  getAllCustomers(): Observable<any> {
     return this.http.get(`${this.apiUrl}`);
   }
 
@@ -22,13 +22,13 @@ export class AdminService {
   // ✔ MAKE USER ADMIN
   // ----------------------------------------
   makeAdmin(id: string): Observable<any> {
-    return this.http.put(`${this.apiUrl}/makeadmin/${id}`, {});
+    return this.http.put(`${this.apiUrl}makeadmin/${id}`, {});
   }
 
   // ----------------------------------------
   // ✔ OPTIONAL: DELETE USER (لو عايزة تضيفيها)
   // ----------------------------------------
-  deleteUser(id: string): Observable<any> {
+  deleteCustomer(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

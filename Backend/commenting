@@ -10,7 +10,7 @@
 ;     - **config/**
 ;       - db.js (مكان اتصال الداتا بيز – فاضي)
 ;     - **models/**
-;       - User.js
+;       - Customer.js
 ;       - Product.js
 ;       - Order.js
 ;     - **routes/**

@@ -26,7 +26,7 @@ export class Header implements OnInit {
 
   ngOnInit(): void {
     this.loadCategories();
-    this.isAdmin = this.authService.getUser()?.role === "admin";
+    this.isAdmin = this.authService.getCustomer()?.role === "admin";
   }
 
   loadCategories() {

@@ -35,7 +35,7 @@ export class Categorydashboard implements OnInit {
   loadCategories() {
     this.categoryService.getAll().subscribe({
       next: (res) => {
-        
+
         console.log("Categories:", res);
         this.categories = res.data;
       },
@@ -44,7 +44,7 @@ export class Categorydashboard implements OnInit {
   }
 
 
-  // When user selects an image
+  // When customer selects an image
   onImageSelected(event: any) {
     this.selectedImage = event.target.files[0];
   }

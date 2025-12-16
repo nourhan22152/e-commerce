@@ -29,12 +29,12 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 
-const productcontroller = require("./controllers/productController")
-const cartController = require("./controllers/cartController")
-const userController = require("./controllers/userController")
-const categoryController = require("./controllers/categoryController")
-const feedbackController = require("./controllers/feedbackController")
-const { protect, isAdmin } = require("./middleware/authMiddleware");
+const productcontroller = require("./controllers/product.controller")
+const cartController = require("./controllers/cart.controller")
+const customerController = require("./controllers/customer.controller")
+const categoryController = require("./controllers/category.controller")
+const feedbackController = require("./controllers/feedback.controller")
+const { protect, isAdmin } = require("./middlewares/auth.middleware");
 
 
 
@@ -73,42 +73,42 @@ const {
   updateAddress,
   deleteAddress,
   makeAdmin,
-  getAllUsers
-} = userController;
+  getAllCustomers
+} = customerController;
 
 // ✔ Import Auth Middleware
 
 
 
 // =================================================================
-//                         USER ROUTES
+//                         Customer ROUTES
 // =================================================================
 
 // ✔ Public Routes (Register + Login)
-app.get("/users/api", protect, isAdmin, getAllUsers);
+app.get("/api/customers/", protect, isAdmin, getAllCustomers);
 
-app.put("/users/api/makeadmin/:id", protect, isAdmin, makeAdmin)
+app.put("/api/customers/makeadmin/:id", protect, isAdmin, makeAdmin)
 
-app.post("/users/api/register", register);
-app.post("/users/api/login", login);
+app.post("/api/customers/register", register);
+app.post("/api/customers/login", login);
 
 // ✔ Private Routes (Protected with JWT)-09
 
-app.get("/users/api/profile",protect, getProfile);
-app.put("/users/api/profile",protect , updateProfile);
+app.get("/api/customers/profile",protect, getProfile);
+app.put("/api/customers/profile",protect , updateProfile);
 
-app.post("/users/api/address",protect, addAddress);
-app.put("/users/api/address/:index",protect , updateAddress);
-app.delete("/users/api/address/:index",protect , deleteAddress);
+app.post("/api/customers/address",protect, addAddress);
+app.put("/api/customers/address/:index",protect , updateAddress);
+app.delete("/api/customers/address/:index",protect , deleteAddress);
 
 // ------------------------------------------------------------------------------------
-const orderController = require("./controllers/orderController");
+const orderController = require("./controllers/order.controller");
 
 
 app.post("/orders/api", protect, orderController.createOrder);
 app.put("/orders/api/:id/cancel", protect, orderController.cancelOrder);
 app.put("/orders/api/:id/status", protect, isAdmin, orderController.updateOrderStatus);
-app.get("/orders/api/user", protect, orderController.getUserOrders);
+app.get("/orders/api/customer", protect, orderController.getCustomerOrders);
 app.get("/orders/api", protect, isAdmin, orderController.getAllOrders);
 app.get("/orders/api/:id", protect, isAdmin, orderController.getOrderById);
 

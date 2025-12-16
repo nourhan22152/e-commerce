@@ -6,19 +6,19 @@ import { Products } from './layout/products/products';
 import { Category } from './layout/category/category';
 import { Cart } from './layout/cart/cart';
 import { Order } from './layout/order/order';
-import { User } from './layout/user/user';
+import { Customer } from './layout/customer/customer';
 import { Guest } from './layout/guest/guest';
 import { ProductDetails } from './layout/product-details/product-details';
 
 import { Dashboard } from './dashboard/dashboard';
 import { Productdashboard } from './dashboard/productdashboard/productdashboard';
 import { Homedashboard } from './dashboard/homedashboard/homedashboard';
-import { Profile } from './layout/user/profile/profile';
+import { Profile } from './layout/customer/profile/profile';
 import { AuthGuard } from './auth-guard';
-import { Login } from './layout/user/login/login';
-import { Register } from './layout/user/register/register';
-import { Addresses } from './layout/user/addresses/addresses';
-import { Userdashboard } from './dashboard/userdashboard/userdashboard';
+import { Login } from './layout/customer/login/login';
+import { Register } from './layout/customer/register/register';
+import { Addresses } from './layout/customer/addresses/addresses';
+import { Customerdashboard } from './dashboard/customer-dashboard/customer-dashboard';
 import { Orderdashboard } from './dashboard/orderdashboard/orderdashboard';
 import { Categorydashboard } from './dashboard/categorydashboard/categorydashboard';
 import { AdminGuard } from './guards/admin-guard';
@@ -27,7 +27,7 @@ import { FeedbackDashboardComponent } from './dashboard/feedbackdashboard/feedba
 import { Feedback } from './layout/shared/feedback/feedback';
 import { EditProductsDashboard } from './dashboard/edit-products-dashboard/edit-products-dashboard';
 import { UppdateproductDashboard } from './dashboard/uppdateproduct-dashboard/uppdateproduct-dashboard';
-import { UserOrdersComponent } from './layout/user-orders/user-orders';
+import { CustomerOrdersComponent } from './layout/customer-orders/customer-orders';
 
 export const routes: Routes = [
   {
@@ -43,8 +43,8 @@ export const routes: Routes = [
       { path: "category", component: Category },
       { path: "cart", component: Cart },
       { path: "orders", component: Order },
-      { path: 'user-orders', component: UserOrdersComponent },
-      { path: "user", component: User },
+      { path: 'customer-orders', component: CustomerOrdersComponent },
+      { path: "customer", component: Customer },
       { path: "guest", component: Guest },
       { path: "feedback", component: Feedback },
       { path: 'profile', component: Profile, canActivate: [AuthGuard] },
@@ -60,7 +60,7 @@ export const routes: Routes = [
       { path: "products", component: Productdashboard },
       { path: "EditProductsDashboard", component: EditProductsDashboard },
       { path: 'edit/:id', component: UppdateproductDashboard },
-      { path: "user", component: Userdashboard },
+      { path: "customer", component: Customerdashboard },
       { path: "orders", component: Orderdashboard },
       { path: "OrderDetails/:id", component: OrderDetails },
       { path: "categories", component: Categorydashboard },

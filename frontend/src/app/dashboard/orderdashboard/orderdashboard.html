@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>Order ID</th>
-      <th>User</th>
+      <th>Customer</th>
       <th>Total</th>
       <th>Status</th>
       <th>Date</th>
@@ -16,9 +16,9 @@
     <tr *ngFor="let order of orders">
       <td>{{ order._id }}</td>
       <td>
-        <!-- user or guest -->
-        <span *ngIf="order.userId">{{ order.userId.name }}</span>
-        <span *ngIf="!order.userId">{{ order.guestInfo?.name }}</span>
+        <!-- customer or guest -->
+        <span *ngIf="order.CustomerId">{{ order.CustomerId.name }}</span>
+        <span *ngIf="!order.CustomerId">{{ order.guestInfo?.name }}</span>
       </td>
       <td>{{ order.totalPrice }} EGP</td>
       <td>{{ order.status }}</td>

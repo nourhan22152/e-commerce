@@ -1,0 +1,49 @@
+<div class="dashboard-container">
+
+  <h2>Customers Management</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let customer of customers; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.email }}</td>
+        <td>{{ customer.phone }}</td>
+        <td>
+          <span [class.admin]="customer.role === 'admin'">
+            {{ customer.role }}
+          </span>
+        </td>
+
+        <td>
+          <!-- Make Admin Button -->
+          <button
+            *ngIf="customer.role !== 'admin'"
+            (click)="makeAdmin(customer.id)"
+            class="make-admin">
+            Make Admin
+          </button>
+
+          <!-- Delete Customer Button -->
+          <!-- <button class="delete" (click)="deleteCustomer(customer.id)">
+            Delete
+          </button> -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="loading" class="loading">Loading...</div>
+
+</div>

@@ -1,0 +1,24 @@
+<div class="profile-container">
+
+  <h2>Customer Profile</h2>
+
+  <p><strong>Name:</strong> {{ customer?.name }}</p>
+  <p><strong>Email:</strong> {{ customer?.email }}</p>
+  <p><strong>Phone:</strong> {{ customer?.phone }}</p>
+
+  <p><strong>Address:</strong></p>
+
+  <div *ngIf="customer?.addresses?.length; else noAddress">
+    <div *ngFor="let a of customer.addresses" class="address-box">
+      <p>{{ a.label }} - {{ a.city }} - {{ a.street }}</p>
+    </div>
+  </div>
+
+  <ng-template #noAddress>
+    <p>No addresses added yet.</p>
+  </ng-template>
+
+  <button routerLink="/addresses">Manage Addresses</button>
+  <button class="logout" (click)="logout()">Logout</button>
+
+</div>
